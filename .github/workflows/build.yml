@@ -9,10 +9,14 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  LLVM_SYS_180_PREFIX: /usr/lib/llvm-18
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./javagx
 
     steps:
       - uses: actions/checkout@v4
@@ -30,6 +34,8 @@ jobs:
 
       - name: Cache cargo registry & build
         uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: javagx -> target
 
       - name: Build
         run: cargo build --release --verbose
