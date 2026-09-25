@@ -1,0 +1,12 @@
+class Animal:
+    pub name: str
+
+    fn init(self, name: str):
+        self.name = name
+
+    pub fn speak(self) -> str:
+        return self.name + " makes a sound"
+
+fn main() -> i32:
+    let a = new Animal("Rex")
+    return 0

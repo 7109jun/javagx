@@ -1,0 +1,37 @@
+class Animal:
+    pub name: str
+    priv age: i32
+
+    fn init(self, name: str, age: i32):
+        self.name = name
+        self.age = age
+
+    pub fn speak(self) -> str:
+        return self.name + " makes a sound"
+
+class Dog(Animal):
+    fn speak(self) -> str:
+        return self.name + " barks"
+
+fn sum(nums: i32[]) -> i32:
+    var total = 0
+    for n in nums:
+        total += n
+    return total
+
+fn main() -> i32:
+    let d = new Dog("Rex", 3)
+    print(d.speak())
+
+    let nums = [1, 2, 3, 4, 5]
+    print(sum(nums))
+    print(nums.length)
+
+    let a = "hello"
+    let b = "hello"
+    if a == b:
+        print("strings equal")
+
+    print(3.5)
+    print(true)
+    return 0
